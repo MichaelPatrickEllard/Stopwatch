@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NSTimer-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="NSTViewController" customModule="Stopwatch" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="displayLabel" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                <rect key="frame" x="87" y="313" width="201" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9la-oE-JDA">
+                                <rect key="frame" x="171" y="216" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopPressed" destination="9pv-A4-QxB" eventType="touchUpInside" id="4ku-u6-zeM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO6-Se-wN2">
+                                <rect key="frame" x="171" y="148" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startPressed" destination="9pv-A4-QxB" eventType="touchUpInside" id="pFE-Bn-Jhc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="9la-oE-JDA" firstAttribute="top" secondItem="XO6-Se-wN2" secondAttribute="bottom" constant="38" id="9rJ-TD-MhH"/>
+                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="XO6-Se-wN2" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="fFp-ka-JhP"/>
+                            <constraint firstItem="9la-oE-JDA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="jHs-dK-8QC"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="9la-oE-JDA" secondAttribute="bottom" constant="67" id="ngd-ec-iU2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="NSTimer" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="displayLabel" destination="KQZ-1w-vlD" id="TBj-TM-ihS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="53"/>
+        </scene>
+        <!--CADisplayLink-->
+        <scene sceneID="fYy-oo-K1p">
+            <objects>
+                <viewController id="L4t-C5-wof" customClass="CADLViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pjs-Cp-deZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rc0-xh-HE9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jz4-48-8no">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="displayLabel" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4ga-zJ-a9H">
+                                <rect key="frame" x="87" y="313" width="201" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxB-BH-bs2">
+                                <rect key="frame" x="171.5" y="216" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopPressed" destination="L4t-C5-wof" eventType="touchUpInside" id="yfi-C0-r6E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2e-sI-GBh">
+                                <rect key="frame" x="171" y="148" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startPressed" destination="L4t-C5-wof" eventType="touchUpInside" id="HcK-17-m9p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4ga-zJ-a9H" firstAttribute="centerX" secondItem="jz4-48-8no" secondAttribute="centerX" id="Mro-8K-YQx"/>
+                            <constraint firstItem="4ga-zJ-a9H" firstAttribute="top" secondItem="DxB-BH-bs2" secondAttribute="bottom" constant="67" id="OFy-Yg-ox3"/>
+                            <constraint firstItem="DxB-BH-bs2" firstAttribute="centerX" secondItem="jz4-48-8no" secondAttribute="centerX" id="VIk-7T-ecK"/>
+                            <constraint firstItem="4ga-zJ-a9H" firstAttribute="centerY" secondItem="jz4-48-8no" secondAttribute="centerY" id="lWs-lF-cQT"/>
+                            <constraint firstItem="DxB-BH-bs2" firstAttribute="top" secondItem="F2e-sI-GBh" secondAttribute="bottom" constant="38" id="pSA-rJ-ImB"/>
+                            <constraint firstItem="F2e-sI-GBh" firstAttribute="centerX" secondItem="jz4-48-8no" secondAttribute="centerX" id="vQI-LL-MjD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="CADisplayLink" id="u5E-1n-Vw8"/>
+                    <connections>
+                        <outlet property="displayLabel" destination="4ga-zJ-a9H" id="wle-Im-ebN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sPH-Dt-dUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="780"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="L4t-C5-wof" kind="relationship" relationship="viewControllers" id="yjU-V7-hvc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="384"/>
+        </scene>
+    </scenes>
+</document>
